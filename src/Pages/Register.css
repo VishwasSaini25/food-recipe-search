@@ -1,0 +1,97 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+#root,html{
+    background-color:#eaeef3;
+}
+
+.register-div h2{
+    font-size: 20px;
+    color: darkslategrey;
+}
+.register-div h1{
+    color:red;
+    font-size: 50px;
+    letter-spacing: 2px;
+    margin-left:-15px;
+    padding-bottom: 10px;
+}
+.register-div h5{
+    font-size: 15px;
+    color:darkgray;
+    padding-bottom: 10px;
+}
+
+.register-email{
+    display:block;
+    border-radius: 30px;
+    border: 1px solid darkgray;
+    width:50%;
+    height:35px;
+    margin:0 auto;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+.register-pass,.register-confirmpass{
+    border-radius: 30px;
+    border: 1px solid darkgray;
+    width:50%;
+    height:35px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+.register-pass:focus,.register-email:focus{
+    outline:none;
+}
+.register-button{
+    width: 50%;
+    padding:7px 0 ;
+    border:none;
+    border-radius: 30px !important;
+    color:#fff;
+    font-weight: 600;
+    cursor:pointer;
+    background-image: linear-gradient(to right, #ea3522, #e83123, #e72e24, #e52a25, #e32626);
+    box-shadow:  0px 0px 23px -6px rgba(0,0,0,0.51);
+}
+.register-login{
+    margin:30px;
+    color:darkgray;
+}
+.register-h6{
+    margin:30px;
+    color:darkgray;
+}
+.register-socials{
+    margin-left: 1.8rem;
+    cursor: pointer;
+}
+.register-socials li{
+    display:inline;
+    margin-right: 30px;
+    border-radius:50%;
+    /* text-align: center;
+    justify-content: center; */
+}
+.register-socials li:hover{
+    color:red;
+    
+}
+.home-page{
+    width: 50%;
+    margin: auto;
+}
+.sign-up{  
+    text-align: center;
+    background-color: #fff;
+    height:530px; 
+     margin-top:5%;
+    margin-left:5%;  
+    padding-top: 3%;
+    padding-bottom:50px;
+    border-radius: 20px;
+    box-shadow:  0px 0px 23px -6px rgba(0,0,0,0.51);
+}

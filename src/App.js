@@ -15,6 +15,7 @@ function App() {
     <AnimatePresence mode="wait" initial={false}>
   <Routes Location={location} key={location.pathname}>
     <Route exact path="/" element={<Register /> } />
+    <Route exact path="/register" element={<Register /> } />
     <Route path="/login" element ={<Login func = {setLoginUser} />} />
     <Route path="/home" element=
     {  user && user._id ? <Home user ={user} /> : <Login func = {setLoginUser}/> }  />

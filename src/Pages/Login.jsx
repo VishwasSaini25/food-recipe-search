@@ -23,7 +23,7 @@ function Login(props){
         })
     }
     function login(){
-                 axios.post("https://food-recipe-search.vercel.app/login",user)
+                 axios.post("http://food-recipe-search.vercel.app/login",user)
                  .then(res => {
                     // const json = JSON.stringify(res.data.user._id); 
                     // console.log(res.data.user._id);

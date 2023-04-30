@@ -25,7 +25,7 @@ function Register(){
     function register(){
         const { Email,Password,Confirmpass } = user;
         if(Email && Password && (Password === Confirmpass)){
-                 axios.post("https://food-recipe-search-i1c2799m6-vishwassaini25.vercel.app/register",user)
+                 axios.post("https://food-recipe-search.vercel.app/register",user)
                  .then(res => {
                     console.log(res.data.message);
                     if(res.data.message === "user already registered"){

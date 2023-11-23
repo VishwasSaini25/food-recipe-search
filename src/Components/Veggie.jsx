@@ -3,6 +3,8 @@ import styled from "styled-components";
 import {Splide, SplideSlide} from  '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
+import { FaRegStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 function Veggie() {
 
@@ -44,6 +46,7 @@ function Veggie() {
         <Card>
           <Link to={"/recipe/" + recipe.id}>
           <p>{recipe.title}</p>
+          <div><FaRegStar /></div>
           <img src={recipe.image} alt={recipe.title} />
           <Gradient />
           </Link>
@@ -67,6 +70,15 @@ const Card = styled.div`
     overflow: hidden;
     position: relative;
     box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    svg{
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+      color: yellow;
+    }
     img{
       position: absolute;
       border-radius: 2rem;  

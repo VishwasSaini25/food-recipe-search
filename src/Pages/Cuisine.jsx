@@ -5,7 +5,7 @@ import Search from "../Components/Search";
 import Category from "../Components/Category";
 import { GiKnifeFork } from "react-icons/gi";
 import styled from "styled-components";
-
+import Navbar from './Nav';
 function Cuisine() {
 
     const [Cuisine, setCuisine] = useState([]);
@@ -20,12 +20,7 @@ function Cuisine() {
     },[params.type]);
 
   return <>
-    <Nav>
-    <Link to={"/home"} style={{textDecoration: "none"}}>
-    <GiKnifeFork />
-    <Logo>deliciousss</Logo>
-    </Link>
-    </Nav>
+    <Navbar />
       <Search />
       <Category />
     <Grid 

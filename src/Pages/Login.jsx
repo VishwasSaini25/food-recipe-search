@@ -23,19 +23,17 @@ function Login(props){
         })
     }
     function login(){
-                 axios.post("http://food-recipe-search.vercel.app/login",user)
+                 axios.post("http://localhost:4000/login",user)
                  .then(res => {
-                    // const json = JSON.stringify(res.data.user._id); 
-                    // console.log(res.data.user._id);
-                    alert(res.data.message);
-                    props.func(res.data.user);
-                    if(res.data.message === "email incorrect or user not registered"){
-                        History("/register");
-                    } else if(res.data.message === "incorrect password"){
-                        History(0);
-                    } else {
-                    History("/home");
+                    if(res.data){
+                        document.cookie = `token=${res.data.token}`;
+                        History("/home");
+                    } else{
+                    History("/login");
                     }
+                })
+                    .catch(error => {
+                        alert(error.res.data);
                  });        
     }
     const url="";

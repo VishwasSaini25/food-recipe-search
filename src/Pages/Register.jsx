@@ -12,7 +12,7 @@ function Register(){
     const[user,setUser] = useState({
         Email:"",
         Password:"",
-         Confirmpass:""
+        Confirmpass:""
     })
 
     function handleChange(event){
@@ -25,20 +25,17 @@ function Register(){
     function register(){
         const { Email,Password,Confirmpass } = user;
         if(Email && Password && (Password === Confirmpass)){
-                 axios.post("http://food-recipe-search.vercel.app/register",user)
+                 axios.post("http://localhost:4000/register",{Email,Password})
                  .then(res => {
-                    console.log(res.data.message);
-                    if(res.data.message === "user already registered"){
-                        alert(res.data.message);
-                        History("/login");
-                    } else if(res.data.message === "success") {
-                        alert(res.data.message);
+                   if(res.data) {
                         History("/login");
                     } else {
-                        alert("Happy User");
-                        History("/login");
+                        History("/register");
                     }
-                });        
+                })
+                .catch(error => {
+                    console.log(error.res.data);
+                });
          } else {
             alert("invalid input");
         }

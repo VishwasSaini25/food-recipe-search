@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Search from "../Components/Search";
 import Category from "../Components/Category";
 import { GiKnifeFork } from "react-icons/gi";
+import Navbar from './Nav';
 
 function Searched() {
     const [ searched, SetSearched ] = useState([]);
@@ -13,19 +14,17 @@ function Searched() {
     const getSearched = async (name) => {
         const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}&number=12`);
         const recipes = await data.json();
+        // console.log(data);
+        // console.log(recipes);
         SetSearched(recipes.results);
     }  
     useEffect(() => {
         getSearched(params.search);
+        // console.log(params.search);
     },[params.search]);
   return <>
     <div>
-    <Nav>
-            <Link to={"/home"} style={{textDecoration: "none"}}>
-            <GiKnifeFork />
-            <Logo>deliciousss</Logo>
-            </Link>
-        </Nav>
+    <Navbar />
       <Search />
       <Category />
       <Grid

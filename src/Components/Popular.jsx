@@ -1,20 +1,19 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import {Splide, SplideSlide} from  '@splidejs/react-splide';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
 
 function Popular() {
   const [popular, setPopular] = useState([]);
-
   useEffect(() => {
     getPopular();
-  },[]);
+  }, []);
 
-  const getPopular = async() => {
+  const getPopular = async () => {
 
-      const check = localStorage.getItem("popular");
-     if(check){
+    const check = localStorage.getItem("popular");
+    if (check) {
       setPopular(JSON.parse(check));
     } else {
       const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=8`);
@@ -26,32 +25,32 @@ function Popular() {
   };
 
   return (
-      <div>
-          <Wrapper>
-          <h3>Popular picks</h3>
-          <Splide options={{
-            perPage: 4,
-            arrows: false,
-            pagination: true,
-            drag: 'free',
-            gap: '2rem',
-          }}>
+    <div>
+      <Wrapper>
+        <h3>Popular picks</h3>
+        <Splide options={{
+          perPage: 4,
+          arrows: false,
+          pagination: true,
+          drag: 'free',
+          gap: '2rem',
+        }}>
           {popular.map((recipe) => {
-            return(
+            return (
               <SplideSlide key={recipe.title}>
-              <Card>
-                <Link to={"/recipe/" + recipe.id}>
-                <p>{recipe.title}</p>
-                <img src={recipe.image} alt={recipe.title} />
-                <Gradient />
-                </Link>
-              </Card>
+                <Card>
+                  <Link to={"/recipe/" + recipe.id}>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <Gradient />
+                  </Link>
+                </Card>
               </SplideSlide>
             );
           })}
-          </Splide>
-          </Wrapper>
-      </div>
+        </Splide>
+      </Wrapper>
+    </div>
   );
 }
 
@@ -65,7 +64,7 @@ const Card = styled.div`
     overflow: hidden;
     position: relative;
     box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
+   
     img{
       border-radius: 2rem;
       position: absolute;

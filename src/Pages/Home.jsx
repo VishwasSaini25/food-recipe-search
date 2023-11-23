@@ -1,20 +1,15 @@
 import Veggie from "../Components/Veggie";
 import Popular from "../Components/Popular";
 import { motion } from "framer-motion"; 
-import { GiKnifeFork } from "react-icons/gi";
-import { BrowserRouter,Link } from "react-router-dom";
-import styled from "styled-components";
 import Search from "../Components/Search";
 import Category from "../Components/Category";
+import "../index.css";
+import Navbar from "./Nav";
 function Home() {
+  
   return (
     <div>
-    <Nav>
-    <Link to={"/home"} style={{textDecoration: "none"}}>
-    <GiKnifeFork />
-    <Logo>deliciousss</Logo>
-    </Link>
-    </Nav>
+      <Navbar />
       <Search />
       <Category />
     <motion.div
@@ -29,26 +24,5 @@ function Home() {
     </div>
   );
 }
-const Logo = styled.div`
-    text-decoration: none ;
-    font-size: 1.5rem;
-    font-weight: 400;
-    font-family: 'Lobster Two', cursive;
-    display: contents;
-    color: black
-`;
-
-const Nav = styled.div`
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration:none;
-    cursor: pointer;
-    svg{
-      font-size: 2rem;
-      color: black;
-    }
-`;
 
 export default Home;

@@ -47,7 +47,11 @@ const Logo = styled.div`
 `;
 
 const Nav = styled.div`
-    margin-top: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background: white;
+    height: 105px;
     display: flex;
     justify-content: space-between;
     align-items: center;
